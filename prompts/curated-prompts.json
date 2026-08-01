@@ -2098,5 +2098,149 @@
     "prompt": "《风起时肖像》提示：\n\n以《风起时》风格创作一幅逼真的9:16竖版肖像。\n\n成年年轻东亚女性，长黑发，真实皮肤纹理，轻柔自然妆容，无塑料感皮肤，无未成年外貌。\n\n穿着：\n白色衬衫、浅灰色针织背心、海军蓝百褶裙、黑色背包、白色有线耳机。\n\n场景：\n海边甲板 / 渡轮栏杆 / 海边白色长椅，蓝色海洋背景，白色栏杆，明亮柔和的夏日日光。\n\n动作：\n轻柔回头 / 安静坐着听音乐 / 手持老式音乐播放器迎风 / 抚摸头发并看向镜头。\n\n道具：\n老式音乐播放器 / CD播放器 / 手机 / 车票 / 明信片。\n\n氛围：\n柔和、空灵、安静、略带怀旧，仿佛夏日记忆随风飘荡。\n\n风：\n头发被海风自然吹起，可见散落发丝，衣物和耳机线略微晃动。\n\n摄影：\n高真实感、干净构图、浅景深、温柔的胶片质感，明亮的蓝白配色调。\n\n避免：\n塑料感皮肤、凌乱的手、变形的耳机、纠缠的线缆、扭曲的栏杆、浓重的商业广告感。. Leica M11, 50mm f/1.4 lens, deep focus, Tack-sharp focus, high micro-contrast, crisp edges. Golden hour side lighting: 45° warm sun, long golden shadows, amber glow. National Geographic landscape, 8K raw. NEGATIVE: blurry, soft focus, hazy, low contrast, low quality",
     "source": "larus-ai-bitable",
     "category": "landscape"
+  },
+  {
+    "title": "Luxury Studio Beauty Editorial",
+    "prompt": "Ultra photorealistic luxury studio beauty editorial portrait of an elegant woman with warm glowing skin, visible natural pores and realistic micro skin texture, shot on Sony A7R V with 85mm f/1.8 GM lens, professional three-point beauty lighting with large beauty dish key light, soft fill, warm golden rim light and orange halo background, sharp eyes with crisp catchlights, natural luxury makeup, confident sophisticated expression, seamless studio backdrop with golden-orange gradient, cinematic color grading, subtle film grain, hyper-realistic skin texture, natural skin retouch only, Vogue Harper's Bazaar style, 4K museum quality. NEGATIVE: plastic skin, airbrushed, over-smoothed, waxy skin, blurry, CGI, cartoon",
+    "category": "portrait",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Wet Skin Golden Hour Hyper-Realistic",
+    "prompt": "Hyper-realistic close-up portrait of a woman, only left side of face visible, extremely shallow depth of field with eye in absolute sharp focus and crisp catchlight, skin covered in natural running water droplets with vivid specular highlights on wet skin, lips, and nose, visible pores, freckles, micro skin texture, wet hair strands clinging to face, warm golden hour side lighting from large softbox with gold reflector creating soft intense glow and deep shadows, Hasselblad H6D-400c with 100mm f/2.2 lens, ultra-detailed cinematic, realistic wet skin texture. NEGATIVE: plastic skin, smooth skin, over-retouched, airbrushed, flawless",
+    "category": "portrait",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Cinematic High-Contrast Dramatic Portrait",
+    "prompt": "Cinematic premium portrait, ultra high contrast, sharp directional lighting with strong contour on jawline and cheekbones, hard rim light creating dramatic separation and visible halo glow around hair and head edges, eyes with subtle glow and sharp reflections, skin texture heavily emphasized with crisp micro-details, visible pores, natural skin grain and peach fuzz catching light, very dark moody background nearly black, cold cinematic color grade with deep blacks, ultra sharp, natural skin texture. Shot on Sony A7R V with 85mm f/1.4 lens, editorial photography. NEGATIVE: soft lighting, plastic skin, fake HDR, over-smoothed, CGI",
+    "category": "portrait",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Soft Natural Light Editorial - Petra Collins Style",
+    "prompt": "Editorial style medium portrait, focus on face, glowing realistic skin with visible pores and fine natural texture, subtle facial lines and soft highlights, soft golden natural light, gentle shadow play, warm tones, natural expression, in the style of Petra Collins raw intimate aesthetic, minimalism, soft pastel tones, low contrast, fine film grain, natural color grading, light airy background, hyper-realistic, high resolution. Shot on Sony A7R V with 85mm f/2.0, subtle film grain. NEGATIVE: plastic skin, airbrushed, CGI, over-processed, harsh lighting",
+    "category": "portrait",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Dramatic Split Lighting Fashion Portrait",
+    "prompt": "Ultra-photorealistic luxury fashion editorial portrait, dramatic split lighting from a gridded 20-degree spotlight as sole key light, shadow side completely open with no fill for bold graphic contrast and deep cinematic shadows, realistic catchlights, authentic skin texture with visible natural pores and micro-details, no beauty filters or artificial smoothing. Shot on Sony A7R V with 105mm f/1.4 lens from dramatic low angle, tight portrait composition, museum-quality fidelity, true-to-life material rendering. NEGATIVE: airbrushed, plastic skin, flawless, CGI, doll-like, waxy",
+    "category": "portrait",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Rembrandt Lighting Character Elder Portrait",
+    "prompt": "Rembrandt lighting portrait of an elderly man with deeply textured weathered skin, visible character lines, natural aging with dignity, crisp triangle of light on the shadow-side cheek, dramatic chiaroscuro, deep black background. Shot on Leica M11 with 50mm f/1.4 lens, shallow depth of field, razor-sharp focus on wise eyes with bright catchlight, Steve McCurry documentary style. 8K hyper-detailed, raw photo, film grain. NEGATIVE: airbrushed, flawless skin, plastic, CGI, youth-filter, blurry",
+    "category": "portrait",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Layered Mountains Golden Hour",
+    "prompt": "Ultra realistic landscape photography of layered mountain ridges fading into atmospheric haze at golden hour, warm sunlight illuminating snow-capped peaks, soft mist filling the valleys, dramatic clouds catching the light, pristine alpine lake in foreground with perfect reflections, shot from high overlook. Full-frame camera, 70mm lens, f/11 deep depth of field, National Geographic style, ultra detailed, 8K, cinematic realism. NEGATIVE: blurry, soft focus, hazy, oversaturated, low quality",
+    "category": "landscape",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Mountain Road After Rain Golden Light",
+    "prompt": "Breathtaking mountain road just after rainfall, wet asphalt reflecting golden sunset light, lush green hills covered in mist, dramatic clouds, fresh atmosphere with tiny water droplets on leaves, peaceful and cinematic, ultra realistic, HDR, highly detailed, 8K. DSLR wide-angle landscape photography, deep focus, tack-sharp focus. NEGATIVE: blurry, soft focus, hazy, people, oversaturated",
+    "category": "landscape",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Sahara Golden Dunes at Sunset",
+    "prompt": "Vast rolling golden sand dunes in the Sahara at golden hour, endless waves of sand with long dramatic shadows, warm orange and amber tones, clear blue sky with wispy clouds, solitary weathered rock formation in distance, epic scale, ultra realistic landscape photography, 8K, highly detailed, cinematic lighting. Shot on Hasselblad H6D-100c with 50mm lens, f/11. NEGATIVE: blurry, soft focus, hazy, oversaturated, people, low quality",
+    "category": "landscape",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Redwood Forest God Rays Dawn",
+    "prompt": "Ancient redwood forest at sunrise with powerful volumetric god rays piercing through the dense canopy, morning mist swirling around massive tree trunks, lush green ferns and moss on the forest floor, magical yet realistic atmosphere, hyper-detailed, ultra realistic, 8K. National Geographic wilderness photography, cinematic, deep focus, tack-sharp focus. NEGATIVE: blurry, soft focus, hazy, oversaturated, cartoon, AI artifacts",
+    "category": "landscape",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Coastal Waves Crashing Golden Hour",
+    "prompt": "Dramatic rocky coastline with powerful ocean waves crashing against cliffs at golden hour, turquoise water with white foam, sea spray in the air, warm sunset light bathing the scene, dramatic sky with pink and orange clouds, ultra realistic landscape photography. Shot on Sony A1, 24mm wide-angle lens, f/9, highly detailed, 8K, cinematic. NEGATIVE: blurry, soft focus, hazy, oversaturated, low quality",
+    "category": "landscape",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Misty Pine Forest Autumn Morning",
+    "prompt": "Dense misty pine forest in autumn at golden hour, warm light filtering through colorful foliage, carpet of fallen leaves, atmospheric perspective with trees fading into fog, peaceful and immersive, ultra realistic landscape photography, highly detailed textures, 8K. Shot on full-frame camera, f/8, deep focus, tack-sharp focus. NEGATIVE: blurry, soft focus, hazy, oversaturated, low quality",
+    "category": "landscape",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Majestic Male Lion Golden Hour",
+    "prompt": "National Geographic award-winning wildlife photograph of a powerful male African lion with a thick flowing golden mane, standing proudly on a rocky kopje at sunset in the Serengeti, dramatic orange and purple sky, warm side lighting, dust motes in the air, sharp focus on every hair. 600mm telephoto lens, f/4, photorealistic, Steve Winter and Frans Lanting influence, 8K. NEGATIVE: blurry, soft focus, cartoon, low quality, AI artifacts",
+    "category": "wildlife",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Bald Eagle Soaring Mountain Lake",
+    "prompt": "National Geographic iconic photograph of a majestic bald eagle soaring directly toward camera over snow-capped mountains and turquoise lake, wings fully spread, intense yellow eyes locked on viewer, golden hour rim lighting, razor-sharp feather detail, dramatic clouds. 400mm telephoto, photorealistic, ultra sharp detail, 8K. NEGATIVE: blurry, soft focus, cartoon, low quality, AI artifacts",
+    "category": "wildlife",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Lone Wolf Howling Snowy Forest",
+    "prompt": "National Geographic masterpiece of a lone timber wolf howling at a glowing full moon in a snowy pine forest, atmospheric blue-hour lighting, light snow falling, detailed frosted fur, mystical and powerful mood, perfect composition, ultra-realistic wildlife photography, 8K. 400mm telephoto lens, tack-sharp fur detail. NEGATIVE: blurry, soft focus, cartoon, low quality, AI artifacts",
+    "category": "wildlife",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Red Deer Stag in Morning Mist",
+    "prompt": "National Geographic ethereal photograph of a majestic red deer stag with massive symmetrical antlers standing in thick morning mist in a Scottish Highland glen at dawn, golden sun rays breaking through fog, dew-covered heather, majestic and serene, ultra-realistic, 8K. 600mm telephoto, f/4, sharp focus on every hair and antler detail. NEGATIVE: blurry, soft focus, cartoon, low quality, AI artifacts",
+    "category": "wildlife",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Golden Eagle Diving Hunt",
+    "prompt": "National Geographic action shot of a golden eagle diving at high speed toward prey on a Scottish mountainside, talons extended, powerful wings tucked, rugged rocky terrain and mist below, dramatic overcast sky with god rays, extreme motion detail, ultra-realistic wildlife photography, 8K. 400mm telephoto, f/5.6, razor-sharp feather detail. NEGATIVE: blurry, motion blur, cartoon, low quality",
+    "category": "wildlife",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Wolf Pack Winter Migration",
+    "prompt": "National Geographic documentary photograph of a pack of gray wolves moving single-file through deep snow in the Canadian Rockies during a winter storm, dramatic overcast light, visible breath vapor, extreme fur and snow texture detail, cinematic wide shot, ultra-realistic. 200mm telephoto, tack-sharp focus, 8K. NEGATIVE: blurry, soft focus, cartoon, low quality, AI artifacts",
+    "category": "wildlife",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "NYC B&W Decisive Moment",
+    "prompt": "Photorealistic black and white candid street photograph, shot on Leica M11 Monochrom with Summilux-M 35mm f/1.4 ASPH at f/4, 1/250s, ISO 400. Decisive moment in bustling Lower Manhattan crosswalk: a middle-aged man in contemporary wool coat frozen mid-stride while checking his phone as diverse pedestrians flow around him, subtle motion blur on background figures, sharp focus on his expression and gesture, high-contrast silver gelatin print aesthetic, deep blacks, crisp highlights, fine film grain, natural vignetting, documentary style Henri Cartier-Bresson and Garry Winogrand, cinematic composition, hyper-detailed textures on wet asphalt and clothing, authentic unposed realism, 8K. NEGATIVE: posed, staged, blurry, oversaturated, cartoon, plastic skin",
+    "category": "street",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "London Golden Hour Street Candid",
+    "prompt": "Hyper-realistic cinematic street portrait, shot on Leica M11 with Summicron-M 50mm f/2 at f/2.2, golden hour in busy London street. Candid moment of a young woman in modern beige wool coat and slightly messy hair standing calmly in the middle of the frame with a serious, introspective expression while blurred pedestrians and cyclists create motion around her, wet pavement reflecting warm sunlight and neon signage, shallow depth of field with razor-sharp focus on her face and soft bokeh background, Leica natural color science, subtle film grain, cinematic teal-amber grading, documentary authenticity, photorealistic skin texture and fabric detail, 8K. NEGATIVE: posed, staged, blurry, plastic skin, airbrushed",
+    "category": "street",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Tokyo Rain Neon Night Candid",
+    "prompt": "Shot on Leica M11 with Noctilux-M 50mm f/0.95 at f/1.4, candid street photography in heavy downpour on a neon-lit Tokyo crosswalk at night. Lone woman in translucent raincoat and modern streetwear walking with confidence, her silhouette sharply focused against blurred rushing crowd and motion streaks of umbrellas, dramatic reflections in puddles mixing neon magenta/cyan with cool ambient light, high micro-contrast, chromatic aberration on vertical signs, fine film grain, cinematic realism, documentary feel, wet asphalt texture, water droplets on lens, photorealistic, 8K. NEGATIVE: posed, staged, blurry, plastic skin, airbrushed, CGI",
+    "category": "street",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Berlin Blue Hour Solitary Figure",
+    "prompt": "Hyper-realistic cinematic street photograph, shot on Leica M11-P black paint with Summilux 35mm f/1.4 at f/2.8, 1/60s, ISO 800. Lone pedestrian in dark contemporary overcoat walking directly toward camera on wet Berlin street at blue hour, subtle motion blur on background pedestrians and reflections from digital billboards and streetlights, moody teal and amber color grade, shallow depth of field, sharp focus on face and gait, fine grain, Leica signature contrast and shadow detail, documentary candid aesthetic, atmospheric yet grounded realism, 8K. NEGATIVE: posed, staged, blurry, plastic skin, CGI",
+    "category": "street",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Market Vendor Candid Documentary",
+    "prompt": "Candid documentary street photography, shot on Leica M11 with 28mm Elmarit-M at f/5.6, bustling outdoor market, warm afternoon light. Unposed moment of an elderly vendor interacting naturally with a young customer amid colorful stalls, fresh produce, and subtle modern elements like electric scooters, layered composition with overlapping figures, natural gestures and expressions, Leica color science with rich yet realistic tones, light film grain, cinematic depth, hyper-detailed textures on fabrics, skin, and goods, authentic street atmosphere, no staging, photorealistic, 8K. NEGATIVE: posed, staged, blurry, plastic skin, oversaturated, cartoon",
+    "category": "street",
+    "source": "x-community-2026"
+  },
+  {
+    "title": "Night Flash Street Candid Drama",
+    "prompt": "Candid night street photography using Leica M11 with flash, 35mm lens at f/4, ISO 1600. Powerful on-camera flash illuminating a stylish young person posing naturally beside a bright yellow electric car on dark asphalt, extreme contrast with deep black background and sharp shadows, intense metallic reflections on the car, subtle distant streetlights, cinematic powerful mood, light 35mm film grain, Leica flash rendering with clean highlights, hyper-detailed skin and fabric, documentary realism, 8K. NEGATIVE: posed, blurry, plastic skin, CGI, over-exposed",
+    "category": "street",
+    "source": "x-community-2026"
   }
 ]

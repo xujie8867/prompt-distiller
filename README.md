@@ -2,6 +2,13 @@
 
 > 一个自包含的 AI 生图 Skill，任何智能体（Claude Code、Codex、Hermes）直接读取即用。
 
+![Last Updated](https://img.shields.io/badge/更新-2026--08--13-brightgreen)
+![Version](https://img.shields.io/badge/version-v2.0.1-blue)
+![Prompts](https://img.shields.io/badge/题库-879条-orange)
+![Status](https://img.shields.io/badge/状态-持续维护中-success)
+
+> 📌 **项目持续维护中**：规则随每日实战反馈迭代，最新变更见 [CHANGELOG.md](CHANGELOG.md)。
+
 ## 🌟 核心能力
 
 - **🔍 自动审计** — 10项清单评分，0-100分
@@ -13,16 +20,18 @@
 
 ```
 prompt-distiller/
-├── SKILL.md                          # 主 Skill（智能体入口）
+├── SKILL.md                          # 主 Skill（智能体入口，v2.0 相机物理审计）
 ├── README.md                         # 本文件
 ├── references/
-│   ├── master-photography-techniques.md  # 大师摄影技巧全集
+│   ├── camera-physics-methodology.md    # 相机物理定向方法论（9风格9投9中）
+│   ├── gpt-image2-fatal-pitfalls.md     # gpt-image-2-high 致命坑位速查
+│   ├── master-photography-techniques.md # 大师摄影技巧全集
 │   ├── sharp-photography-prompts-2026.md # 锐利Prompt模板
-│   └── prompt-audit-scoring.md           # 10项审计评分细则
+│   └── prompt-audit-scoring.md          # 10项审计评分细则
 ├── scripts/
 │   └── audit_prompt.py                   # Prompt审计脚本
 └── prompts/
-    └── curated-prompts.json              # 精选高质量提示词库
+    └── curated-prompts.json              # 精选高质量提示词库（374条摄影类）
 ```
 
 ## 🚀 使用方法
@@ -31,22 +40,22 @@ prompt-distiller/
 
 ```bash
 # 克隆到 skills 目录
-git clone https://github.com/xuj-hub/prompt-distiller.git \
+git clone https://github.com/xujie8867/prompt-distiller.git \
   ~/.hermes/skills/creative/prompt-distiller
 
 # 或者通过 curator 安装
-hermes curator install https://github.com/xuj-hub/prompt-distiller
+hermes curator install https://github.com/xujie8867/prompt-distiller
 ```
 
 ### 作为 Claude Code / Codex Skill 安装
 
 ```bash
 # Claude Code
-/plugin marketplace add xuj-hub/prompt-distiller
-/plugin install prompt-distiller@xuj-hub-skills
+/plugin marketplace add xujie8867/prompt-distiller
+/plugin install prompt-distiller@xujie8867-skills
 
 # Codex
-npx skills@latest add xuj-hub/prompt-distiller --agent codex --copy
+npx skills@latest add xujie8867/prompt-distiller --agent codex --copy
 ```
 
 ### 手动使用

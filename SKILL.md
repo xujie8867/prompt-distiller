@@ -1,134 +1,137 @@
 ---
 name: prompt-distiller
-description: "AI image generation mastery: auto-audit prompts, inject photography technique (camera+lens+lighting+skin), optimize weak prompts, and generate professional-grade images. Works with any image generation model."
-version: "1.0.0"
-category: image-generation
+description: "Audit and optimize image prompts before generation."
+version: "2.0.0"
 ---
 
-# Prompt Distiller — AI 生图能力蒸馏包
+# Prompt Distiller v2.0 — 相机物理审计
 
-> 把 Hermes 的生图能力打包成自包含的 Skill，任何智能体读取即用。
+> **2026-08-05 范式转换**：AI 不理解艺术史——它理解相机物理。
+> 不说"Gregory Crewdson cinematic staging"，说"Canon EOS R5, 85mm f/1.2, ISO 800"。
+> 9 种风格，9 投 9 中，全部验证。
 
-## 一、核心原理
+Repo: `https://github.com/xujie8867/prompt-distiller`
 
-生图质量的差距不在模型，在 prompt。一段优秀的 prompt 必须包含 **六大摄影元素**：
+## 核心审计：相机物理定向（最高优先级）
+
+### ⛔ 致命词——prompt 中出现则直接扣至 <60 分
+
+以下词汇在 AI 生图中是「过度风格化指令」，而非摄影参考：
+
+- **摄影师名字**：Gregory Crewdson, Annie Leibovitz, Sebastião Salgado, Steve McCurry, Fan Ho, Alex Webb, Saul Leiter, Roger Deakins, Wong Kar-wai, 等
+- **风格标签**：cinematic, editorial, staged, theatrical, dramatic portrait, fashion editorial, 电影感, 舞台调度, 戏剧性
+- **胶片型号（在 prompt 中）**：Kodak Portra 400, Cinestill 800T, Ilford HP5... → AI 把它们理解为「画成这个胶片的风格」，而非「用这个胶片拍」
+
+### ✅ 必须词——prompt 中缺失则扣 20 分/项
+
+- 相机型号 + 镜头 + ISO：`Canon EOS R5, 85mm f/1.2, ISO 800`
+- 自然光描述：`overcast soft daylight` / `window light natural side` / `blue hour twilight`
+- 纪实风格声明：`photojournalism, candid, unretouched, documentary style, raw photo`
+
+### 范式对照
 
 ```
-[相机型号] + [镜头+光圈] + [布光方案] + [真实皮肤/材质] + [精确构图] + [负向词]
+❌ Annie Leibovitz dramatic portrait, cinematic studio lighting
+   → AI 画"一幅 Leibovitz 风格的画"
+
+✅ Canon EOS R5, 85mm f/1.2, ISO 100, single large softbox 45° from left
+   → AI 拍"85mm 定焦在柔光箱下的景深和质感"
 ```
 
-**数据证明**：从 2,456 条社区 prompt 审计发现：
-- 仅 1.2% 含具体相机型号
-- 仅 0.2% 含光圈参数（如 f/1.4）
-- 仅 5.6% 含具体布光方案
-- 仅 2.7% 含真实皮肤描述
-- → **90%+ 的 prompt 都是模糊描述，不可能出好图**
+---
 
-## 二、优秀 Prompt 判断标准（10 项审计清单）
+## 10 项强制审计
 
-| # | 检查项 | ❌ 不合格 | ✅ 合格 |
-|---|--------|---------|--------|
-| 1 | 相机品牌 | 无 / "professional camera" | `Sony A1` / `Hasselblad H6D-100c` |
-| 2 | 镜头+光圈 | 无 / "portrait lens" | `85mm f/1.4` / `100mm f/2.8 macro` |
-| 3 | 布光方案 | 无 / "good lighting" | `Rembrandt lighting: 45° key, triangle shadow` |
-| 4 | 皮肤真实 | 无 / "perfect skin" | `visible pores, microtexture, NOT flawless` |
-| 5 | 负向词 | 无 | `blurry, plastic skin, airbrushed, oversmoothed` |
-| 6 | 锐度 | 无 | `tack-sharp focus, high micro-contrast` |
-| 7 | 权威锚 | 无 | `National Geographic style` / `Vogue editorial` |
-| 8 | 构图 | 无 | `shallow DOF, creamy bokeh, eyes in focus` |
-| 9 | 分辨率 | 无 | `8K hyper-detailed, raw photo` |
-| 10 | 人像专项 | 泛泛 "Asian woman" | 精确 `East African, rich ebony skin, warm undertones` |
+每次生图前逐项过：
 
-**评分规则**：
-- 10/10 → 大师级，直接生成
-- 7-9/10 → 良好，可生成
-- 4-6/10 → 需优化，注入缺失元素
-- 0-3/10 → 低质量，完全重写
+| # | 检查项 | 追问 |
+|---|--------|------|
+| ① | 相机型号+镜头+ISO | prompt 里有吗？缺则扣 20 分 |
+| ② | 自然光描述 | overcast/window/blue hour/twilight？不能说 golden hour backlight + 浅色 |
+| ③ | 致命词扫描 | 有摄影师名/film stock/cinematic/editorial/staged？→ 替换为相机参数 |
+| ④ | 物理真实感 | 毛孔/绒毛/接触阴影/织造纹理？ |
+| ⑤ | 精确肤色 | 冷白/象牙白/暖橄榄/蜜色？不要「白皙」 |
+| ⑥ | 年龄-皮肤适配 | 20 岁和 50 岁的皮肤细节不同 |
+| ⑦ | 负向词完整 | 见下方负向词库，人像加 staged portrait/fashion editorial |
+| ⑧ | 光线-主体反差 | 浅色主体+逆光+浅背景？→ 换深色主体+硬侧光+深背景 |
+| ⑨ | 黑白人像？ | 黑白纪实人像 → Codex 搞不定，切 Grok |
+| ⑩ | 反射表面？ | 镜面/水面/盐沼/玻璃 → 避或切 Grok |
 
-**参考来源**：[`references/master-photography-techniques.md`](references/master-photography-techniques.md)
+---
 
-## 三、Prompt 优化工作流
+## 自动切 Grok 三场景
 
-### 步骤 1：审计原始 Prompt
-
-读取用户/系统的原始 prompt，对照 10 项审计清单打分。
-
-### 步骤 2：注入缺失元素
-
-根据缺失项，从知识库注入对应元素：
-
-| 缺失项 | 注入方式 |
-|--------|---------|
-| 相机 | 从[相机词库](references/master-photography-techniques.md#二单反相机镜头提示词控制技巧-)匹配 |
-| 镜头 | 从[镜头词库](references/master-photography-techniques.md#镜头型号效果对照)按场景选择 |
-| 布光 | 从[9种布光方案](references/master-photography-techniques.md#9种经典人像布光方案)匹配一个 |
-| 皮肤 | 注入 `visible pores, microtexture — NOT flawless` |
-| 负向词 | 注入 `blurry, plastic skin, airbrushed, oversmoothed, soft focus` |
-| 种族肤色 | 从[12种肤色词库](references/master-photography-techniques.md#肤色描述精确词库)匹配 |
-
-### 步骤 3：人像专项处理
-
-如果 prompt 涉及人物，强制执行：
-1. **皮肤真实性**：必带 `visible pores, microtexture, natural asymmetry`
-2. **负向词**：必带 `plastic skin, airbrushed, flawless, waxy skin`
-3. **年龄适配**：参照[各年龄层皮肤特征](references/master-photography-techniques.md#各年龄层皮肤特征)
-4. **种族肤色**：如涉及特定国家/种族，使用精确肤色词
-
-### 步骤 4：生成
-
-优化后的 prompt 通过 `image_generate` 工具生成。默认参数：
-- 比例：2:3 portrait
-- 最小边长：2000px（自动放大）
-- 负向词：自动追加到 prompt 尾部
-
-### 步骤 5：质量反馈
-
-生成后检查是否糊了（gpt-image-2-high 先天偏软）：
-- 用户说「糊了」→ 切 xAI Grok 重出
-- 检查[锐度保障规则](references/sharp-photography-prompts-2026.md)
-
-## 四、生图引擎选择
-
-| 条件 | 引擎 | 原因 |
+| 场景 | 信号 | 动作 |
 |------|------|------|
-| 含中文文字 | gpt-image-2-high (OpenAI Codex) | 中文渲染最强 |
-| 纯视觉/摄影 | gpt-image-2-high → 糊了用 Grok | Codex优先，糊了补发 |
-| 有参考图编辑 | Codex CLI --image | 脸部/Logo保留率最高 |
-| 批量多主题 | 逐张 image_generate | 每张等结果 |
+| 低反差糊片 | 浅色主体 + 逆光 + 浅背景 | 切 Grok |
+| 黑白假脸 | 黑白写实人像 | 切 Grok |
+| 反射失真 | 盐沼/水面/玻璃/镜面 | 切 Grok |
 
-## 五、自动优化示例
+切 Grok → 出单张 → 立即切回 Codex。不犹豫。
 
-### 输入（不合格 prompt）：
+---
+
+## 负向词库（每张必带，全量）
+
+### 人像/动物/微距
 ```
-A beautiful portrait of a woman at sunset
-```
-
-### 审计结果（1/10）：
-- ❌ 无相机 ❌ 无镜头 ❌ 无布光 ❌ 无皮肤 ❌ 无负向词 ❌ "beautiful"空洞 ❌ 无锐度 ❌ 无构图 ❌ 无权威锚
-
-### 自动优化后（10/10）：
-```
-Ultra-photorealistic portrait of a woman at golden hour.
-Visible pores, natural skin microtexture, subtle imperfections — NOT flawless, NOT airbrushed.
-Golden hour side lighting: warm sun at 45° creating long golden shadows, soft amber wraparound glow.
-Shot on Sony A1 with 85mm f/1.4 lens, shallow depth of field, razor-sharp focus on eyes with crisp catchlight, creamy bokeh.
-National Geographic portrait style, 8K hyper-detailed, raw photo, film grain.
-NEGATIVE: plastic skin, airbrushed, flawless, waxy skin, blurry, soft focus, oversaturated, low quality
+NOT CGI, NOT 3D render, NOT airbrushed, NOT plastic skin, NOT waxy skin,
+NOT doll-like, NOT beauty filter, NOT over-sharpened, NOT HDR glow,
+NOT cinematic lighting, NOT staged portrait, NOT fashion editorial,
+NOT oversaturated, NOT perfect symmetry, NOT digital art
 ```
 
-## 六、关键约束
+### 纯风景
+```
+NOT CGI, NOT 3D render, NOT HDR, NOT over-sharpened, NOT oversaturated,
+NOT digital art, NOT cinematic
+```
 
-1. **固定比例 2:3 portrait**：不生成 landscape/square
-2. **最小边长 2000px**：自动 Lanczos 放大
-3. **prompt < 250 字中文**：gpt-image-2-high 安全上限
-4. **跨日不重复**：检查 7 天历史，视觉模式词共享 ≥2 则跳大类
-5. **负向词每张必带**：`blurry, plastic skin, airbrushed, oversmoothed, soft focus`
-6. **锐度标签必加**：`tack-sharp focus, high micro-contrast`
+### 传统负向（皮肤/解剖/物理/质量，按需叠加）
+plastic skin, waxy skin, airbrushed, beauty filter, over-smoothed, poreless, glass skin, flawless, doll-like / CGI, 3D render, illustration, painting, cartoon, anime, oversaturated, HDR, glowing neon, lens flares, over-sharpened, perfect symmetry / deformed hands, extra fingers, bad anatomy, dead eyes, frozen expression, model pose, symmetrical face / painted water, floating objects, no contact shadows, smeared background / blurry, soft focus, low quality, jpeg artifacts, watermark
 
-## 参考文档
+---
 
-| 文档 | 内容 |
-|------|------|
-| [`master-photography-techniques.md`](references/master-photography-techniques.md) | 12种肤色词库、9款相机对照、12种镜头对照、9种布光方案、各年龄层皮肤特征 |
-| [`sharp-photography-prompts-2026.md`](references/sharp-photography-prompts-2026.md) | 锐利Prompt模板×5、锐利关键词清单、经典Prompt公式 |
-| [`prompt-audit-scoring.md`](references/prompt-audit-scoring.md) | 10项审计清单详细说明 + 评分示例 |
+## 9 风格矩阵（Agent 选题参考，不写入 prompt）
+
+| # | 风格 | 相机+ISO | 光线 | 类型 |
+|---|------|---------|------|------|
+| 1 | 新闻纪实 | R5 85/1.2, ISO 800-1600 | window/overcast/tungsten | portrait |
+| 2 | 商业时装 | Hasselblad 80/1.9, ISO 100 | north window indirect | fashion |
+| 3 | 旅行人文 | Leica M11 35/1.4, ISO 400-800 | sun through leaves | travel |
+| 4 | 极简风光 | Sony 24/1.4, ISO 100, tripod | pre-dawn 30s | landscape |
+| 5 | 街头快照 | Ricoh GR III 28/2.8, ISO 1600+ | mixed city no flash | street |
+| 6 | 棚拍肖像 | R5 50/1.2, ISO 100 | softbox 45° white BG | studio |
+| 7 | 自然风光 | Sony 24-70/2.8@35, ISO 200 | dawn mist | landscape |
+| 8 | 野生动物 | Sony 400/2.8+TC, ISO 800 | rim light frost | wildlife |
+| 9 | 昆虫微距 | R5 100/2.8 macro 1:1, ISO 400 | morning leaf | macro |
+
+---
+
+## 胶片+相机速查（⚠️ Agent 选题用，不写入 prompt）
+
+胶片和机身的物理特性用于 Agent 选题时推算画质特征（如 Portra 400 = 暖调偏黄、ISO 400 的颗粒度），**不直接写进 prompt**。写进 prompt 的是相机参数组合。
+
+| 胶片 | 用途 | Agent 参考特征 |
+|------|------|--------------|
+| Kodak Portra 400 | 暖调人像 | 自然肤色、柔和反差 → 搭配 R5 85/1.2 |
+| Cinestill 800T | 霓虹夜景 | 红色 halation → 搭配 Leica M11 35/1.4, ISO 3200 |
+| Kodak Gold 200 | 复古暖调 | 偏黄颗粒 → 搭配 Sony 24-70, golden hour |
+| Ilford HP5 | 黑白纪实 | 丰富灰阶 → 直接切 Grok，不用 Codex |
+
+| 机身 | 适用场景 |
+|------|---------|
+| Canon EOS R5 | 人像/运动/微距 |
+| Sony A7R V | 高分辨率风光/人像 |
+| Leica M11 | 街头/旅行人文 |
+| Hasselblad X2D | 商业时装/建筑 |
+| Ricoh GR III | 街头快照 |
+
+---
+
+## 参考资源
+- `references/camera-physics-methodology.md` — 相机物理定向方法论（2026-08-05）
+- `references/master-photography-techniques.md` — 相机/镜头/布光/肤色速查
+- `references/gpt-image2-fatal-pitfalls.md` — gpt-image-2-high 致命坑位速查
+- [hermes-daily-image-training](https://github.com/xujie8867/hermes-daily-image-training) — 9 风格完整验证 + 示例图
+- 当前提示词库：`all-prompts.json` = 879 条（image-generation 347 / landscape 171 / portrait 155 / photography-miraivfx 98 / illustration-miraivfx 40 / wildlife 27 / street 21 / artistic-photography 10 / 其他 10）
